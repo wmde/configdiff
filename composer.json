@@ -1,0 +1,17 @@
+{
+    "name": "wmde/configdiff",
+    "description": "Show differences between constants defined in PHP files",
+    "license": "GPL v2",
+    "authors": [
+        {
+            "name": "Gabriel Birke",
+            "email": "gabriel.birke@wikimedia.de"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "WMDE\\ConfigDiff\\": "src"
+      }
+    },
+    "require": {}
+}
