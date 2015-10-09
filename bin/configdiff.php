@@ -4,27 +4,29 @@ use WMDE\ConfigDiff\ConstantParser;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+// @codingStandardsIgnoreStart
 function usage() {
-  global $argv;
-  echo "Usage: {$argv[0]} TEMPLATE_FILE CONFIG_FILE\n";
-  die(1);
+    // @codingStandardsIgnoreEnd
+	global $argv;
+	echo "Usage: {$argv[0]} TEMPLATE_FILE CONFIG_FILE\n";
+	die( 1 );
 }
 
 if ( empty( $argv[1] ) || empty( $argv[2] ) ) {
-  echo "Missing parameters.\n";
-  usage();
+	echo "Missing parameters.\n";
+	usage();
 }
 
 $templateFile = $argv[1];
 $configFile = $argv[2];
 
 if ( !file_exists( $templateFile ) ) {
-  echo "Template file does not exist.\n";
-  usage();
+	echo "Template file does not exist.\n";
+	usage();
 }
 if ( !file_exists( $configFile ) ) {
-  echo "Config file does not exist.\n";
-  usage();
+	echo "Config file does not exist.\n";
+	usage();
 }
 
 $parser = new ConstantParser();
@@ -38,16 +40,16 @@ $configKeys = array_keys( $configConstants );
 $extra = array_diff( $configKeys, $templateKeys );
 $missing = array_diff( $templateKeys, $configKeys );
 
-if ( empty($missing) && empty($extra) ) {
-  exit;
+if ( empty( $missing ) && empty( $extra ) ) {
+	exit;
 }
 
-if ( $missing) {
-  echo "The following configuration keys are missing:\n";
-  echo implode("\n", $missing) . "\n";
+if ( $missing ) {
+	echo "The following configuration keys are missing:\n";
+	echo implode( "\n", $missing ) . "\n";
 }
 
-if ( $extra) {
-  echo "The following configuration keys are set without equivalent in template file:\n";
-  echo implode("\n", $extra) . "\n";
+if ( $extra ) {
+	echo "The following configuration keys are set without equivalent in template file:\n";
+	echo implode( "\n", $extra ) . "\n";
 }

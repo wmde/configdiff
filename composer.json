@@ -14,5 +14,13 @@
       }
     },
     "bin": [ "bin/configdiff" ],
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "mediawiki/mediawiki-codesniffer": "0.3.0"
+    },
+    "scripts": {
+        "cs": [
+            "phpcs --standard=vendor/mediawiki/mediawiki-codesniffer/MediaWiki --extensions=php,php5,inc --ignore=vendor -p ."
+        ]
+   }
 }
