@@ -1,7 +1,5 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
-
 use WMDE\ConfigDiff\ConstantParser;
 
 class ConstantParserTest extends \PHPUnit_Framework_TestCase
