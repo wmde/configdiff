@@ -2,11 +2,20 @@
 
 use WMDE\ConfigDiff\ConstantParser;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+$autoloadFiles = [
+	__DIR__ . '/../vendor/autoload.php',
+	__DIR__ . '/../../../autoload.php'
+];
+
+foreach ( $autoloadFiles as $autoloadFile ) {
+	if ( file_exists( $autoloadFile ) ) {
+		require_once $autoloadFile;
+	}
+}
 
 // @codingStandardsIgnoreStart
 function usage() {
-    // @codingStandardsIgnoreEnd
+	// @codingStandardsIgnoreEnd
 	global $argv;
 	echo "Usage: {$argv[0]} TEMPLATE_FILE CONFIG_FILE\n";
 	die( 1 );
