@@ -1,13 +1,16 @@
 {
     "name": "wmde/configdiff",
     "description": "Show differences between constants defined in PHP files",
-    "license": "GPL v2",
+    "license": "GPL-2.0",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Gabriel Birke",
             "email": "gabriel.birke@wikimedia.de"
         }
     ],
+    "keywords": [ "configuration", "parser", "const" ],
+    "homepage": "https://github.com/wmde/configdiff",
     "autoload": {
       "psr-4": {
         "WMDE\\ConfigDiff\\": "src"
